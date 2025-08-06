@@ -1,0 +1,1274 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  --background: #ffffff;
+  --foreground: #000000;
+  --card: #ffffff;
+  --card-foreground: #000000;
+  --popover: #ffffff;
+  --popover-foreground: #000000;
+  --primary: #000000;
+  --primary-foreground: #ffffff;
+  --secondary: #f5f5f5;
+  --secondary-foreground: #000000;
+  --muted: #f0f0f0;
+  --muted-foreground: #666666;
+  --accent: #e5e5e5;
+  --accent-foreground: #000000;
+  --destructive: #000000;
+  --destructive-foreground: #ffffff;
+  --border: #e0e0e0;
+  --input: transparent;
+  --input-background: #f8f8f8;
+  --switch-background: #d0d0d0;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #000000;
+  --chart-1: #000000;
+  --chart-2: #666666;
+  --chart-3: #333333;
+  --chart-4: #999999;
+  --chart-5: #cccccc;
+  --radius: 0.5rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #000000;
+  --sidebar-primary: #000000;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f5f5f5;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: #e0e0e0;
+  --sidebar-ring: #000000;
+}
+
+.dark {
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #000000;
+  --card-foreground: #ffffff;
+  --popover: #000000;
+  --popover-foreground: #ffffff;
+  --primary: #ffffff;
+  --primary-foreground: #000000;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #ffffff;
+  --muted: #1a1a1a;
+  --muted-foreground: #999999;
+  --accent: #1a1a1a;
+  --accent-foreground: #ffffff;
+  --destructive: #ffffff;
+  --destructive-foreground: #000000;
+  --border: #333333;
+  --input: #1a1a1a;
+  --ring: #ffffff;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: #ffffff;
+  --chart-2: #cccccc;
+  --chart-3: #999999;
+  --chart-4: #666666;
+  --chart-5: #333333;
+  --sidebar: #000000;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #ffffff;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #1a1a1a;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #333333;
+  --sidebar-ring: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-sm);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+    }
+
+    button {
+      font-size: var(--text-sm);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+    }
+
+    input {
+      font-size: var(--text-sm);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.4;
+    }
+  }
+}
+
+/* Import both English and Arabic fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;600;700&display=swap');
+
+html {
+  font-size: var(--font-size);
+  /* Default to English font family */
+  font-family: 'Inter', 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* RTL-specific styling */
+[dir="rtl"] {
+  text-align: right;
+  /* Switch to Arabic fonts for RTL content */
+  font-family: "Noto Sans Arabic", "Cairo", "Tajawal", system-ui, sans-serif;
+}
+
+[dir="rtl"] * {
+  text-align: inherit;
+}
+
+/* RTL-specific component overrides */
+[dir="rtl"] .flex {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .space-x-1 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+  margin-right: calc(0.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+[dir="rtl"] .space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+[dir="rtl"] .space-x-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+[dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+/* RTL margin and padding adjustments */
+[dir="rtl"] .ml-1 { margin-left: 0; margin-right: 0.25rem; }
+[dir="rtl"] .ml-2 { margin-left: 0; margin-right: 0.5rem; }
+[dir="rtl"] .ml-3 { margin-left: 0; margin-right: 0.75rem; }
+[dir="rtl"] .ml-4 { margin-left: 0; margin-right: 1rem; }
+[dir="rtl"] .mr-1 { margin-right: 0; margin-left: 0.25rem; }
+[dir="rtl"] .mr-2 { margin-right: 0; margin-left: 0.5rem; }
+[dir="rtl"] .mr-3 { margin-right: 0; margin-left: 0.75rem; }
+[dir="rtl"] .mr-4 { margin-right: 0; margin-left: 1rem; }
+
+[dir="rtl"] .pl-1 { padding-left: 0; padding-right: 0.25rem; }
+[dir="rtl"] .pl-2 { padding-left: 0; padding-right: 0.5rem; }
+[dir="rtl"] .pl-3 { padding-left: 0; padding-right: 0.75rem; }
+[dir="rtl"] .pl-4 { padding-left: 0; padding-right: 1rem; }
+[dir="rtl"] .pr-1 { padding-right: 0; padding-left: 0.25rem; }
+[dir="rtl"] .pr-2 { padding-right: 0; padding-left: 0.5rem; }
+[dir="rtl"] .pr-3 { padding-right: 0; padding-left: 0.75rem; }
+[dir="rtl"] .pr-4 { padding-right: 0; padding-left: 1rem; }
+
+/* RTL positioning */
+[dir="rtl"] .left-0 { left: auto; right: 0; }
+[dir="rtl"] .left-1 { left: auto; right: 0.25rem; }
+[dir="rtl"] .left-2 { left: auto; right: 0.5rem; }
+[dir="rtl"] .left-3 { left: auto; right: 0.75rem; }
+[dir="rtl"] .left-4 { left: auto; right: 1rem; }
+[dir="rtl"] .right-0 { right: auto; left: 0; }
+[dir="rtl"] .right-1 { right: auto; left: 0.25rem; }
+[dir="rtl"] .right-2 { right: auto; left: 0.5rem; }
+[dir="rtl"] .right-3 { right: auto; left: 0.75rem; }
+[dir="rtl"] .right-4 { right: auto; left: 1rem; }
+
+/* RTL border radius */
+[dir="rtl"] .rounded-l { border-radius: 0 0.375rem 0.375rem 0; }
+[dir="rtl"] .rounded-r { border-radius: 0.375rem 0 0 0.375rem; }
+[dir="rtl"] .rounded-tl { border-top-left-radius: 0; border-top-right-radius: 0.375rem; }
+[dir="rtl"] .rounded-tr { border-top-right-radius: 0; border-top-left-radius: 0.375rem; }
+[dir="rtl"] .rounded-bl { border-bottom-left-radius: 0; border-bottom-right-radius: 0.375rem; }
+[dir="rtl"] .rounded-br { border-bottom-right-radius: 0; border-bottom-left-radius: 0.375rem; }
+
+/* Arabic font class for when explicitly needed */
+.font-arabic {
+  font-family: "Noto Sans Arabic", "Cairo", "Tajawal", system-ui, sans-serif;
+}
+
+/* Better text rendering for Arabic */
+[dir="rtl"] * {
+  text-rendering: optimizeLegibility;
+  -webkit-font-feature-settings: "liga", "kern";
+  font-feature-settings: "liga", "kern";
+}
+
+/* Ensure proper number display in both directions */
+.ltr-numbers {
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+/* RTL-specific animations */
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Shimmer animation for loading states */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+[dir="rtl"] .slide-in {
+  animation: slideInFromRight 0.3s ease-out;
+}
+
+[dir="ltr"] .slide-in {
+  animation: slideInFromLeft 0.3s ease-out;
+}
+
+/* RTL grid and flex utilities */
+[dir="rtl"] .grid-flow-col {
+  grid-auto-flow: column reverse;
+}
+
+/* Better handling of icons in RTL */
+[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}
+
+/* Splash Screen Specific Animations */
+@keyframes splashFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes splashLogoRotate {
+  0% { transform: rotateY(0deg) rotateX(0deg); }
+  25% { transform: rotateY(10deg) rotateX(5deg); }
+  50% { transform: rotateY(0deg) rotateX(10deg); }
+  75% { transform: rotateY(-10deg) rotateX(5deg); }
+  100% { transform: rotateY(0deg) rotateX(0deg); }
+}
+
+@keyframes splashParticleFloat {
+  0% {
+    transform: translateY(0px) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes splashIconOrbit {
+  0% {
+    transform: rotate(0deg) translateX(60px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(60px) rotate(-360deg);
+  }
+}
+
+@keyframes splashProgressGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), 0 0 30px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@keyframes splashTextReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) rotateX(-20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+@keyframes splashCardFloat {
+  0%, 100% {
+    transform: translateY(0px) rotateX(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotateX(2deg);
+  }
+}
+
+@keyframes splashRingExpand {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+/* Splash Screen Utility Classes */
+.splash-fade-in {
+  animation: splashFadeIn 1s ease-out;
+}
+
+.splash-logo-rotate {
+  animation: splashLogoRotate 6s ease-in-out infinite;
+}
+
+.splash-particle-float {
+  animation: splashParticleFloat 4s ease-out infinite;
+}
+
+.splash-icon-orbit {
+  animation: splashIconOrbit 20s linear infinite;
+}
+
+.splash-progress-glow {
+  animation: splashProgressGlow 2s ease-in-out infinite;
+}
+
+.splash-text-reveal {
+  animation: splashTextReveal 0.8s ease-out;
+}
+
+.splash-card-float {
+  animation: splashCardFloat 3s ease-in-out infinite;
+}
+
+.splash-ring-expand {
+  animation: splashRingExpand 2s ease-out infinite;
+}
+
+/* Enhanced 3D Effects for Splash Screen */
+.splash-3d-container {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.splash-3d-element {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.splash-depth-1 {
+  transform: translateZ(20px);
+}
+
+.splash-depth-2 {
+  transform: translateZ(40px);
+}
+
+.splash-depth-3 {
+  transform: translateZ(60px);
+}
+
+/* Dark mode specific splash animations */
+.dark .splash-progress-glow {
+  animation: splashProgressGlowDark 2s ease-in-out infinite;
+}
+
+@keyframes splashProgressGlowDark {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Splash screen mobile optimizations */
+@media (max-width: 768px) {
+  .splash-logo-rotate {
+    animation-duration: 8s;
+  }
+  
+  .splash-icon-orbit {
+    animation-duration: 25s;
+  }
+  
+  .splash-3d-container {
+    perspective: 800px;
+  }
+  
+  .splash-depth-1 {
+    transform: translateZ(10px);
+  }
+  
+  .splash-depth-2 {
+    transform: translateZ(20px);
+  }
+  
+  .splash-depth-3 {
+    transform: translateZ(30px);
+  }
+}
+
+/* Toast Notification Styling - Fixed Colors for Black & White Theme */
+.toaster {
+  z-index: 9999;
+}
+
+.toaster .toast {
+  background: var(--background) !important;
+  color: var(--foreground) !important;
+  border: 2px solid var(--border) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+  border-radius: var(--radius) !important;
+  padding: 16px !important;
+  min-height: 60px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  backdrop-filter: blur(8px);
+}
+
+.dark .toaster .toast {
+  background: var(--background) !important;
+  color: var(--foreground) !important;
+  border: 2px solid var(--border) !important;
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Toast Title Styling */
+.toaster .toast [data-title] {
+  color: var(--foreground) !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  margin-bottom: 4px !important;
+  line-height: 1.4 !important;
+}
+
+/* Toast Description/Content Styling */
+.toaster .toast [data-description] {
+  color: var(--foreground) !important;
+  font-weight: 400 !important;
+  font-size: 13px !important;
+  opacity: 0.8 !important;
+  line-height: 1.4 !important;
+}
+
+/* Success Toast */
+.toaster .toast[data-type="success"] {
+  border-color: var(--primary) !important;
+  background: var(--background) !important;
+}
+
+.toaster .toast[data-type="success"] [data-title] {
+  color: var(--foreground) !important;
+}
+
+.toaster .toast[data-type="success"] [data-description] {
+  color: var(--foreground) !important;
+  opacity: 0.8 !important;
+}
+
+/* Error Toast */
+.toaster .toast[data-type="error"] {
+  border-color: var(--destructive) !important;
+  background: var(--background) !important;
+}
+
+.toaster .toast[data-type="error"] [data-title] {
+  color: var(--destructive) !important;
+}
+
+.toaster .toast[data-type="error"] [data-description] {
+  color: var(--foreground) !important;
+  opacity: 0.8 !important;
+}
+
+/* Warning Toast */
+.toaster .toast[data-type="warning"] {
+  border-color: var(--primary) !important;
+  background: var(--background) !important;
+}
+
+.toaster .toast[data-type="warning"] [data-title] {
+  color: var(--foreground) !important;
+}
+
+.toaster .toast[data-type="warning"] [data-description] {
+  color: var(--foreground) !important;
+  opacity: 0.8 !important;
+}
+
+/* Info Toast */
+.toaster .toast[data-type="info"] {
+  border-color: var(--border) !important;
+  background: var(--background) !important;
+}
+
+.toaster .toast[data-type="info"] [data-title] {
+  color: var(--foreground) !important;
+}
+
+.toaster .toast[data-type="info"] [data-description] {
+  color: var(--foreground) !important;
+  opacity: 0.8 !important;
+}
+
+/* Toast Action Button */
+.toaster .toast [data-button] {
+  background: var(--primary) !important;
+  color: var(--primary-foreground) !important;
+  border: none !important;
+  padding: 6px 12px !important;
+  border-radius: calc(var(--radius) - 2px) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  margin-top: 8px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.toaster .toast [data-button]:hover {
+  opacity: 0.9 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Toast Close Button */
+.toaster .toast [data-close-button] {
+  color: var(--foreground) !important;
+  opacity: 0.6 !important;
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 4px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+}
+
+.toaster .toast [data-close-button]:hover {
+  opacity: 1 !important;
+  background: var(--secondary) !important;
+}
+
+/* Toast Icon Styling */
+.toaster .toast [data-icon] {
+  color: var(--foreground) !important;
+  margin-right: 8px !important;
+  flex-shrink: 0 !important;
+}
+
+.toaster .toast[data-type="success"] [data-icon] {
+  color: var(--primary) !important;
+}
+
+.toaster .toast[data-type="error"] [data-icon] {
+  color: var(--destructive) !important;
+}
+
+/* RTL Toast Adjustments */
+[dir="rtl"] .toaster .toast [data-icon] {
+  margin-right: 0 !important;
+  margin-left: 8px !important;
+}
+
+/* XP and Achievement Specific Styling */
+.toaster .toast.xp-toast {
+  background: var(--background) !important;
+  border: 2px solid var(--primary) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.toaster .toast.xp-toast::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, var(--primary) 50%, transparent 70%);
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.toaster .toast.xp-toast [data-title] {
+  color: var(--foreground) !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+}
+
+.toaster .toast.xp-toast [data-description] {
+  color: var(--foreground) !important;
+  opacity: 0.9 !important;
+  font-weight: 500 !important;
+}
+
+/* Achievement Toast */
+.toaster .toast.achievement-toast {
+  background: var(--background) !important;
+  border: 2px solid var(--primary) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2) !important;
+  transform: scale(1.02) !important;
+}
+
+.dark .toaster .toast.achievement-toast {
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.15) !important;
+}
+
+.toaster .toast.achievement-toast [data-title] {
+  color: var(--foreground) !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+.toaster .toast.achievement-toast [data-description] {
+  color: var(--foreground) !important;
+  opacity: 0.9 !important;
+  font-weight: 500 !important;
+}
+
+/* Subscription Toast */
+.toaster .toast.subscription-toast {
+  background: var(--background) !important;
+  border: 2px solid var(--primary) !important;
+  position: relative !important;
+}
+
+.toaster .toast.subscription-toast [data-title] {
+  color: var(--foreground) !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+}
+
+.toaster .toast.subscription-toast [data-description] {
+  color: var(--foreground) !important;
+  opacity: 0.9 !important;
+  font-weight: 400 !important;
+}
+
+/* Enhanced Animation for Special Toasts */
+@keyframes toastSlideIn {
+  0% {
+    transform: translateX(100%) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes toastBounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.toaster .toast.xp-toast,
+.toaster .toast.achievement-toast,
+.toaster .toast.subscription-toast {
+  animation: toastSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1), toastBounce 0.6s ease-in-out 0.2s !important;
+}
+
+/* Mobile Toast Adjustments */
+@media (max-width: 768px) {
+  .toaster .toast {
+    min-height: 50px !important;
+    padding: 12px !important;
+    font-size: 13px !important;
+  }
+  
+  .toaster .toast [data-title] {
+    font-size: 14px !important;
+  }
+  
+  .toaster .toast [data-description] {
+    font-size: 12px !important;
+  }
+  
+  .toaster .toast.xp-toast [data-title],
+  .toaster .toast.achievement-toast [data-title] {
+    font-size: 15px !important;
+  }
+}
+
+/* Animated Feature Cards */
+.feature-card {
+  --gradient: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+  padding: 5px;
+  border-radius: 1rem;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+}
+
+.feature-card::after {
+  position: absolute;
+  content: "";
+  top: 30px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  transform: scale(0.8);
+  filter: blur(25px);
+  background: var(--gradient);
+  transition: opacity 0.5s;
+}
+
+.feature-card-info {
+  background: #181818;
+  color: #181818;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  border-radius: 0.7rem;
+}
+
+.feature-card-title {
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
+/* Hover effects */
+.feature-card:hover::after {
+  opacity: 0;
+}
+
+.feature-card:hover .feature-card-info {
+  color: #f7ba2b !important;
+  transition: color 1s;
+}
+
+.feature-card:hover .feature-card-title {
+  color: #f7ba2b !important;
+  transition: color 1s;
+}
+
+/* Dark mode adjustments for feature cards */
+.dark .feature-card-info {
+  background: #0a0a0a;
+}
+
+/* 3D Animation Enhancements */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-500 {
+  perspective: 500px;
+}
+
+/* 3D Card Flip Animations */
+@keyframes flipX {
+  0% { transform: rotateX(0deg); }
+  50% { transform: rotateX(-90deg); }
+  100% { transform: rotateX(0deg); }
+}
+
+@keyframes flipY {
+  0% { transform: rotateY(0deg); }
+  50% { transform: rotateY(-90deg); }
+  100% { transform: rotateY(0deg); }
+}
+
+@keyframes float3d {
+  0%, 100% { 
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+  }
+  33% { 
+    transform: translateY(-10px) rotateX(5deg) rotateY(2deg);
+  }
+  66% { 
+    transform: translateY(-5px) rotateX(-2deg) rotateY(-5deg);
+  }
+}
+
+@keyframes pulse3d {
+  0%, 100% {
+    transform: scale(1) rotateX(0deg);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    transform: scale(1.05) rotateX(5deg);
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes glow3d {
+  0%, 100% {
+    box-shadow: 
+      0 0 5px rgba(255, 255, 255, 0.1),
+      0 0 10px rgba(255, 255, 255, 0.1),
+      0 0 15px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.2),
+      0 0 20px rgba(255, 255, 255, 0.2),
+      0 0 30px rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Utility classes for 3D effects */
+.animate-float-3d {
+  animation: float3d 6s ease-in-out infinite;
+}
+
+.animate-pulse-3d {
+  animation: pulse3d 2s ease-in-out infinite;
+}
+
+.animate-glow-3d {
+  animation: glow3d 3s ease-in-out infinite;
+}
+
+.flip-x {
+  animation: flipX 0.6s ease-in-out;
+}
+
+.flip-y {
+  animation: flipY 0.6s ease-in-out;
+}
+
+/* Enhanced hover effects with 3D transforms */
+.hover-lift-3d {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift-3d:hover {
+  transform: translateY(-8px) rotateX(5deg) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.hover-tilt-3d {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-tilt-3d:hover {
+  transform: perspective(1000px) rotateX(10deg) rotateY(10deg) scale(1.05);
+}
+
+/* 3D Button Effects */
+.button-3d {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-3d:hover {
+  transform: translateY(-2px) rotateX(10deg);
+}
+
+.button-3d:active {
+  transform: translateY(1px) rotateX(-5deg);
+}
+
+.button-3d::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  border-radius: inherit;
+  transform: translateZ(-4px);
+  filter: brightness(0.8);
+  z-index: -1;
+}
+
+/* Performance optimizations for 3D animations */
+.gpu-accelerated {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.smooth-3d {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* Login Page 3D Enhancements */
+@keyframes loginFloat {
+  0%, 100% { 
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  25% { 
+    transform: translateY(-15px) rotateX(10deg) rotateY(5deg) rotateZ(2deg);
+  }
+  50% { 
+    transform: translateY(-8px) rotateX(-5deg) rotateY(-10deg) rotateZ(-1deg);
+  }
+  75% { 
+    transform: translateY(-12px) rotateX(8deg) rotateY(3deg) rotateZ(1deg);
+  }
+}
+
+@keyframes loginCardGlow {
+  0%, 100% {
+    box-shadow: 
+      0 0 20px rgba(0, 0, 0, 0.1),
+      0 0 40px rgba(0, 0, 0, 0.05),
+      0 0 60px rgba(0, 0, 0, 0.02);
+  }
+  50% {
+    box-shadow: 
+      0 0 30px rgba(0, 0, 0, 0.15),
+      0 0 60px rgba(0, 0, 0, 0.08),
+      0 0 90px rgba(0, 0, 0, 0.04);
+  }
+}
+
+@keyframes loginParticleFloat {
+  0% {
+    transform: translateY(100vh) scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(1) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.login-card-3d {
+  animation: loginCardGlow 4s ease-in-out infinite;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.login-float-icon {
+  animation: loginFloat 8s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.login-particle {
+  animation: loginParticleFloat 6s linear infinite;
+}
+
+/* Enhanced input 3D effects */
+.input-3d {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-3d:focus-within {
+  transform: translateZ(10px) rotateX(5deg);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.1),
+    0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.input-3d::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  border-radius: inherit;
+  transform: translateZ(-5px);
+  filter: brightness(0.9);
+  opacity: 0.5;
+  z-index: -1;
+}
+
+/* 3D Button enhancements for login */
+.login-button-3d {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.login-button-3d::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  transform: translateZ(2px);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.login-button-3d:hover::before {
+  opacity: 1;
+}
+
+.login-button-3d::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  border-radius: inherit;
+  transform: translateZ(-3px);
+  filter: brightness(0.8);
+  z-index: -1;
+}
+
+/* Floating background elements */
+.login-bg-element {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.1;
+  animation: loginFloat 10s ease-in-out infinite;
+}
+
+.login-bg-element:nth-child(odd) {
+  animation-direction: reverse;
+  animation-duration: 12s;
+}
+
+.login-bg-element:nth-child(3n) {
+  animation-delay: 2s;
+}
+
+.login-bg-element:nth-child(4n) {
+  animation-delay: 4s;
+}
+
+/* Enhanced logo 3D effects */
+.login-logo-3d {
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.login-logo-3d::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  background: inherit;
+  border-radius: inherit;
+  transform: translateZ(-10px);
+  filter: brightness(0.7);
+  z-index: -1;
+}
+
+.login-logo-3d::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  background: inherit;
+  border-radius: inherit;
+  transform: translateZ(-5px);
+  filter: brightness(0.85);
+  z-index: -1;
+}
+
+/* Responsive 3D effects */
+@media (max-width: 768px) {
+  .mobile-reduce-3d .hover-lift-3d:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+  
+  .mobile-reduce-3d .hover-tilt-3d:hover {
+    transform: scale(1.02);
+  }
+  
+  .mobile-reduce-3d .animate-float-3d {
+    animation-duration: 8s;
+  }
+  
+  .mobile-reduce-3d .login-card-3d {
+    animation-duration: 6s;
+  }
+  
+  .mobile-reduce-3d .input-3d:focus-within {
+    transform: translateZ(5px) rotateX(2deg);
+  }
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 768px) {
+  html {
+    font-size: 13px;
+  }
+  
+  :root {
+    --radius: 0.375rem;
+  }
+}
+
+/* Simplify mobile interactions */
+@media (max-width: 768px) {
+  .mobile-simplified {
+    @apply p-3 m-2 rounded-md;
+  }
+  
+  .mobile-simplified * {
+    @apply text-sm;
+  }
+  
+  .mobile-simplified h1 {
+    @apply text-lg;
+  }
+  
+  .mobile-simplified h2 {
+    @apply text-base;
+  }
+  
+  .mobile-simplified h3 {
+    @apply text-sm;
+  }
+}

@@ -1,0 +1,108 @@
+name: fittracker
+description: "A comprehensive fitness tracking application with nutrition monitoring, workout logging, and achievement systems."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # State Management
+  provider: ^6.1.1
+  
+  # Local Storage
+  shared_preferences: ^2.2.2
+  
+  # UI Components
+  cupertino_icons: ^1.0.6
+  google_fonts: ^6.1.0
+  
+  # Localization
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.19.0
+  
+  # HTTP & API
+  http: ^1.1.0
+  dio: ^5.4.0
+  
+  # Charts & Graphs
+  fl_chart: ^0.66.0
+  syncfusion_flutter_charts: ^24.1.41
+  
+  # Images & Media
+  image_picker: ^1.0.4
+  cached_network_image: ^3.3.0
+  
+  # Animations
+  lottie: ^2.7.0
+  animations: ^2.0.8
+  
+  # Utils
+  uuid: ^4.2.1
+  path_provider: ^2.1.1
+  
+  # Camera & QR Code
+  qr_code_scanner: ^1.0.1
+  camera: ^0.10.5+5
+  
+  # Notifications
+  flutter_local_notifications: ^16.3.0
+  
+  # Permissions
+  permission_handler: ^11.2.0
+  
+  # Date & Time
+  table_calendar: ^3.0.9
+  
+  # PDF Generation (for reports)
+  pdf: ^3.10.7
+  printing: ^5.12.0
+  
+  # Connectivity
+  connectivity_plus: ^5.0.2
+  
+  # Device Info
+  device_info_plus: ^9.1.1
+  
+  # Package Info
+  package_info_plus: ^5.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/animations/
+    - assets/data/
+  
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Regular.ttf
+        - asset: assets/fonts/Inter-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Inter-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Inter-Bold.ttf
+          weight: 700
+    
+    - family: NotoSansArabic
+      fonts:
+        - asset: assets/fonts/NotoSansArabic-Regular.ttf
+        - asset: assets/fonts/NotoSansArabic-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/NotoSansArabic-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/NotoSansArabic-Bold.ttf
+          weight: 700
